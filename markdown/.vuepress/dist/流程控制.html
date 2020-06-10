@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>4.流程控制</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.021324d1.css" as="style"><link rel="preload" href="/assets/js/app.10b0d601.js" as="script"><link rel="preload" href="/assets/js/2.2959cc1c.js" as="script"><link rel="preload" href="/assets/js/15.f45ceac0.js" as="script"><link rel="prefetch" href="/assets/js/10.9cbbc5c7.js"><link rel="prefetch" href="/assets/js/11.698025f3.js"><link rel="prefetch" href="/assets/js/12.f5b7035e.js"><link rel="prefetch" href="/assets/js/13.9d4fea56.js"><link rel="prefetch" href="/assets/js/14.20b73f37.js"><link rel="prefetch" href="/assets/js/16.dbad7df2.js"><link rel="prefetch" href="/assets/js/17.579cf571.js"><link rel="prefetch" href="/assets/js/18.41fd52b4.js"><link rel="prefetch" href="/assets/js/3.fcf23d77.js"><link rel="prefetch" href="/assets/js/4.fb4f81e2.js"><link rel="prefetch" href="/assets/js/5.05ba125a.js"><link rel="prefetch" href="/assets/js/6.015f8eaa.js"><link rel="prefetch" href="/assets/js/7.023872ca.js"><link rel="prefetch" href="/assets/js/8.dfec0f28.js"><link rel="prefetch" href="/assets/js/9.ca0a9da6.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.021324d1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_4-流程控制"><a href="#_4-流程控制" class="header-anchor">#</a> 4.流程控制</h1> <p>Go 语言支持最基本的三种程序运行结构：顺序结构、选择结构、循环结构。
+ 顺序结构：程序按顺序执行，不发生跳转。
+ 选择结构：依据是否满足条件，有选择的执行相应功能。
+ 循环结构：依据条件是否满足，循环多次执行某段代码。</p> <h2 id="_4-1-选择结构"><a href="#_4-1-选择结构" class="header-anchor">#</a> 4.1 选择结构</h2> <h3 id="_4-1-1-if-语句"><a href="#_4-1-1-if-语句" class="header-anchor">#</a> 4.1.1 if 语句</h3> <h4 id="_4-1-1-1-if"><a href="#_4-1-1-1-if" class="header-anchor">#</a> 4.1.1.1 if</h4> <div class="language-Go extra-class"><pre class="language-go"><code>    <span class="token keyword">var</span> a <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">3</span>
+    <span class="token keyword">if</span> a <span class="token operator">==</span> <span class="token number">3</span> <span class="token punctuation">{</span> <span class="token comment">//条件表达式没有括号</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;a==3&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//支持一个初始化表达式, 初始化字句和条件表达式直接需要用分号分隔</span>
+    <span class="token keyword">if</span> b <span class="token operator">:=</span> <span class="token number">3</span><span class="token punctuation">;</span> b <span class="token operator">==</span> <span class="token number">3</span> <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;b==3&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><h4 id="_4-1-1-2-if-else"><a href="#_4-1-1-2-if-else" class="header-anchor">#</a> 4.1.1.2 if ... else</h4> <div class="language-Go extra-class"><pre class="language-go"><code>    <span class="token keyword">if</span> a <span class="token operator">:=</span> <span class="token number">3</span><span class="token punctuation">;</span> a <span class="token operator">==</span> <span class="token number">4</span> <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;a==4&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token comment">//左大括号必须和条件语句或else在同一行</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;a!=4&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><h4 id="_4-1-1-3-if-else-if-else"><a href="#_4-1-1-3-if-else-if-else" class="header-anchor">#</a> 4.1.1.3 if ... else if ... else</h4> <div class="language-Go extra-class"><pre class="language-go"><code>    <span class="token keyword">if</span> a <span class="token operator">:=</span> <span class="token number">3</span><span class="token punctuation">;</span> a <span class="token operator">&gt;</span> <span class="token number">3</span> <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;a&gt;3&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> a <span class="token operator">&lt;</span> <span class="token number">3</span> <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;a&lt;3&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> a <span class="token operator">==</span> <span class="token number">3</span> <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;a==3&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;error&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><h3 id="_4-1-2-switch-语句"><a href="#_4-1-2-switch-语句" class="header-anchor">#</a> 4.1.2 switch 语句</h3> <p>Go 里面 switch 默认相当于每个 case 最后带有 break，匹配成功后不会自动向下执行其他 case，而是跳出整个 switch, 但是可以使用 fallthrough 强制执行后面的 case 代码：</p> <div class="language-Go extra-class"><pre class="language-go"><code>    <span class="token keyword">var</span> score <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">90</span>
+
+    <span class="token keyword">switch</span> score <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token number">90</span><span class="token punctuation">:</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;优秀&quot;</span><span class="token punctuation">)</span>
+        <span class="token comment">//fallthrough</span>
+    <span class="token keyword">case</span> <span class="token number">80</span><span class="token punctuation">:</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;良好&quot;</span><span class="token punctuation">)</span>
+        <span class="token comment">//fallthrough</span>
+    <span class="token keyword">case</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">:</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;一般&quot;</span><span class="token punctuation">)</span>
+        <span class="token comment">//fallthrough</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;差&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><p>可以使用任何类型或表达式作为条件语句：</p> <div class="language-Go extra-class"><pre class="language-go"><code>    <span class="token comment">//1</span>
+    <span class="token keyword">switch</span> s1 <span class="token operator">:=</span> <span class="token number">90</span><span class="token punctuation">;</span> s1 <span class="token punctuation">{</span> <span class="token comment">//初始化语句;条件</span>
+    <span class="token keyword">case</span> <span class="token number">90</span><span class="token punctuation">:</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;优秀&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token number">80</span><span class="token punctuation">:</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;良好&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;一般&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//2</span>
+    <span class="token keyword">var</span> s2 <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">90</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">{</span> <span class="token comment">//这里没有写条件</span>
+    <span class="token keyword">case</span> s2 <span class="token operator">&gt;=</span> <span class="token number">90</span><span class="token punctuation">:</span> <span class="token comment">//这里写判断语句</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;优秀&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> s2 <span class="token operator">&gt;=</span> <span class="token number">80</span><span class="token punctuation">:</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;良好&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;一般&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//3</span>
+    <span class="token keyword">switch</span> s3 <span class="token operator">:=</span> <span class="token number">90</span><span class="token punctuation">;</span> <span class="token punctuation">{</span> <span class="token comment">//只有初始化语句，没有条件</span>
+    <span class="token keyword">case</span> s3 <span class="token operator">&gt;=</span> <span class="token number">90</span><span class="token punctuation">:</span> <span class="token comment">//这里写判断语句</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;优秀&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> s3 <span class="token operator">&gt;=</span> <span class="token number">80</span><span class="token punctuation">:</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;良好&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;一般&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><h2 id="_4-2-循环语句"><a href="#_4-2-循环语句" class="header-anchor">#</a> 4.2 循环语句</h2> <h3 id="_4-2-1-for"><a href="#_4-2-1-for" class="header-anchor">#</a> 4.2.1 for</h3> <div class="language-Go extra-class"><pre class="language-go"><code>    <span class="token keyword">var</span> i<span class="token punctuation">,</span> sum <span class="token builtin">int</span>
+
+    <span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+        sum <span class="token operator">+=</span> i
+    <span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;sum = &quot;</span><span class="token punctuation">,</span> sum<span class="token punctuation">)</span>
+</code></pre></div><h3 id="_4-2-2-range"><a href="#_4-2-2-range" class="header-anchor">#</a> 4.2.2 range</h3> <p>关键字 range 会返回两个值，第一个返回值是元素的数组下标，第二个返回值是元素的值：</p> <div class="language-Go extra-class"><pre class="language-go"><code>    s <span class="token operator">:=</span> <span class="token string">&quot;abc&quot;</span>
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token keyword">range</span> s <span class="token punctuation">{</span> <span class="token comment">//支持 string/array/slice/map。</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%c\n&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> c <span class="token operator">:=</span> <span class="token keyword">range</span> s <span class="token punctuation">{</span> <span class="token comment">// 忽略 index</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%c\n&quot;</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span> i<span class="token punctuation">,</span> c <span class="token operator">:=</span> <span class="token keyword">range</span> s <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d, %c\n&quot;</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> c<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><h2 id="_4-3-跳转语句"><a href="#_4-3-跳转语句" class="header-anchor">#</a> 4.3 跳转语句</h2> <h3 id="_4-3-1-break-和-continue"><a href="#_4-3-1-break-和-continue" class="header-anchor">#</a> 4.3.1 break 和 continue</h3> <p>在循环里面有两个关键操作 break 和 continue，break 操作是跳出当前循环，continue 是跳过本次循环。</p> <div class="language-Go extra-class"><pre class="language-go"><code>    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token number">2</span> <span class="token operator">==</span> i <span class="token punctuation">{</span>
+            <span class="token comment">//break    //break操作是跳出当前循环</span>
+            <span class="token keyword">continue</span> <span class="token comment">//continue是跳过本次循环</span>
+        <span class="token punctuation">}</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><p>注意：break 可⽤于 for、switch、select，⽽ continue 仅能⽤于 for 循环。</p> <h3 id="_4-3-2-goto"><a href="#_4-3-2-goto" class="header-anchor">#</a> 4.3.2 goto</h3> <p>用 goto 跳转到必须在当前函数内定义的标签：</p> <div class="language-Go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">{</span>
+            fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+            <span class="token keyword">goto</span> LABEL <span class="token comment">//跳转到标签LABEL，从标签处，执行代码</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;this is test&quot;</span><span class="token punctuation">)</span>
+
+LABEL<span class="token punctuation">:</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;it is over&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.10b0d601.js" defer></script><script src="/assets/js/2.2959cc1c.js" defer></script><script src="/assets/js/15.f45ceac0.js" defer></script>
+  </body>
+</html>
